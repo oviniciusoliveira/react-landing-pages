@@ -9,6 +9,7 @@ export default {
   },
   argTypes: {
     children: { type: 'string' },
+    link: { type: 'string' },
   },
 };
 
