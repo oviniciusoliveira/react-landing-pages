@@ -10,11 +10,6 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -29,5 +24,10 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
