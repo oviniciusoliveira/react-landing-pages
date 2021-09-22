@@ -1,4 +1,3 @@
-import { GlobalStyle } from '../../styles/global';
 import * as Styled from './styles';
 
 function Home() {
@@ -7,7 +6,6 @@ function Home() {
       <Styled.Wrapper background="pink">
         <h1>React Landing Pages</h1>
       </Styled.Wrapper>
-      <GlobalStyle />
     </div>
   );
 }
