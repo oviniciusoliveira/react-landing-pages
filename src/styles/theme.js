@@ -3,7 +3,7 @@ export const theme = {
     primary: 'green',
     secondary: 'purple',
     primaryBg: 'red',
-    secondaryBg: 'blue',
+    secondaryBg: 'pink',
   },
   fonts: {},
   spacings: {},
