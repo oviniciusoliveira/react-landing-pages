@@ -24,6 +24,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 'off',
   },
   settings: {
     react: {

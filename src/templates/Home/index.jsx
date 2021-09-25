@@ -1,10 +1,11 @@
+import { Heading } from '../../components';
 import * as Styled from './styles';
 
 function Home() {
   return (
     <div className="App">
       <Styled.Wrapper>
-        <h1>React Landing Pages</h1>
+        <Heading>React Landing Pages Title</Heading>
       </Styled.Wrapper>
     </div>
   );
