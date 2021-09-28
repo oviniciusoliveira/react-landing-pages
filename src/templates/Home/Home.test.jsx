@@ -1,13 +1,8 @@
-import { screen } from '@testing-library/react';
-import { renderTheme } from '../../styles/render-theme';
-import { theme } from '../../styles/theme';
+import { renderTheme } from '../../test/render-theme';
 import Home from './index';
 
-test('renders learn react link', () => {
-  renderTheme(<Home />);
-  const headingContainer = screen.getByRole('heading', { name: 'React Landing Pages' }).parentElement;
-  expect(headingContainer).toHaveStyle({
-    background: theme.colors.secondaryBg,
+describe('<Home />', () => {
+  test('should render home', () => {
+    renderTheme(<Home />);
   });
-  expect(headingContainer).toMatchSnapshot();
 });
