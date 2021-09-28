@@ -1,4 +1,4 @@
-import { Heading } from '../../components';
+import { Heading } from '../../components/Heading';
 import * as Styled from './styles';
 
 function Home() {
