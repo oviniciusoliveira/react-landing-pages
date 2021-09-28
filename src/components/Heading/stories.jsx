@@ -5,20 +5,24 @@ export default {
   component: Heading,
   argTypes: {
     children: { type: 'string' },
-    lightColor: {
+    lightTitle: {
       table: {
         disable: true,
       },
     },
   },
   args: {
-    children: 'Children do Heading',
+    children: 'Heading Children',
+    size: 'big',
+    as: 'h1',
+    uppercase: false,
+    lightTitle: false,
   },
 };
 
 export const DarkHeading = (args) => <Heading {...args} />;
 
-export const LightHeading = (args) => <Heading {...args} lightColor={true} />;
+export const LightHeading = (args) => <Heading {...args} lightTitle={true} />;
 
 LightHeading.parameters = {
   backgrounds: {
