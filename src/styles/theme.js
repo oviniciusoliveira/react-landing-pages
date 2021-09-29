@@ -5,6 +5,7 @@ export const theme = {
     lightBackground: '#FFFFFF',
     darkBackground: '#0A1128',
     white: '#FFFFFF',
+    mediumGray: '#DDDDDD',
   },
   font: {
     sizes: {
