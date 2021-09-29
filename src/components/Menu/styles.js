@@ -2,8 +2,13 @@ import styled, { css } from 'styled-components';
 import { Container as SectionContainer } from '../SectionContainer/styles';
 import { Title as LogoTitle } from '../Heading/styles';
 
+const menuVisible = () => css`
+  visibility: visible;
+  opacity: 1;
+`;
+
 export const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, isVisible }) => css`
     position: fixed;
     z-index: 5;
     top: 0;
@@ -12,6 +17,7 @@ export const Container = styled.div`
     bottom: 0;
     border-bottom: ${theme.colors.mediumGray};
     background-color: ${theme.colors.lightBackground};
+    transition: ${isVisible ? 'all 0.2s ease-in-out' : 'none'};
 
     & ${SectionContainer} {
       padding-top: 0;
@@ -24,6 +30,10 @@ export const Container = styled.div`
     }
 
     @media ${theme.media.ltMedium} {
+      visibility: hidden;
+      opacity: 0;
+      ${isVisible && menuVisible()}
+
       & ${SectionContainer} {
         display: grid;
         grid-template-columns: 1fr;
@@ -57,5 +67,27 @@ export const MenuContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  ${({ theme }) => css``}
+  ${({ theme }) => css`
+    z-index: 6;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: ${theme.colors.primaryColor};
+    color: ${theme.colors.white};
+    border: none;
+    border-radius: 0.3rem;
+    display: none;
+    cursor: pointer;
+
+    & > svg {
+      width: 75%;
+      height: 75%;
+    }
+
+    @media ${theme.media.ltMedium} {
+      display: block;
+    }
+  `}
 `;
