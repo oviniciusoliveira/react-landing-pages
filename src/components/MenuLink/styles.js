@@ -7,14 +7,14 @@ export const MenuLink = styled.a.attrs((props) => ({
     display: block;
     text-decoration: none;
     font-size: ${theme.font.sizes.small};
-    padding: ${theme.spacings.xsmall};
+    padding: ${theme.spacings.small};
     color: ${theme.colors.primaryColor};
     position: relative;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 0.78rem;
       height: 0.2rem;
       background: ${theme.colors.secondaryColor};
       width: 0;
