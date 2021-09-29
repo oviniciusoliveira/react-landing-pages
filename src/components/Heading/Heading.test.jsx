@@ -91,6 +91,6 @@ describe('<Heading />', () => {
   test('should match snapshot', () => {
     const { container } = renderTheme(<Heading>Heading Text</Heading>);
 
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
