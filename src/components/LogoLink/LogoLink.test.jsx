@@ -6,7 +6,7 @@ describe('<LogoLink />', () => {
   test('should render text logo with link', () => {
     renderTheme(<LogoLink text="Logo" link="#target" />);
 
-    const heading = screen.getByRole('heading', { name: 'Log' });
+    const heading = screen.getByRole('heading', { name: 'Logo' });
     expect(heading).toBeInTheDocument();
 
     const link = screen.getByRole('link', { name: 'Logo' });

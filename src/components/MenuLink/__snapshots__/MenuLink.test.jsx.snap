@@ -3,8 +3,6 @@
 exports[`<MenuLink /> should match snapshot 1`] = `
 .c0 {
   display: block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1.6rem;
   padding: 1.6rem;
   color: #0A1128;
