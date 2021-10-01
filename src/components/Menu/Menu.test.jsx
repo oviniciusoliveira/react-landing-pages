@@ -42,6 +42,13 @@ describe('<Menu />', () => {
     });
 
     expect(screen.getByLabelText('Open menu')).toBeInTheDocument();
+  });
+
+  test('should open menu when open menu button is pressed', () => {
+    renderTheme(<Menu links={linksMock} logoData={logoData} />);
+
+    const button = screen.getByLabelText('Open or close menu');
+    const menuContainer = button.nextSibling;
 
     fireEvent.click(button);
     expect(menuContainer).toHaveStyleRule('opacity', '1', {
@@ -49,7 +56,7 @@ describe('<Menu />', () => {
     });
     expect(screen.getByLabelText('Close menu')).toBeInTheDocument();
 
-    fireEvent.click(button);
+    fireEvent.click(menuContainer);
     expect(menuContainer).toHaveStyleRule('opacity', '0', {
       media: theme.media.ltMedium,
     });
