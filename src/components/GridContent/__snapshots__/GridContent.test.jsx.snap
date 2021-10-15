@@ -57,11 +57,11 @@ exports[`<GridContent /> should match snapshot 1`] = `
       <div
         class="c2"
       >
-        <h1
+        <h2
           class="c3"
         >
           O título do GridContent
-        </h1>
+        </h2>
         <div
           class="c4"
         >
@@ -223,11 +223,11 @@ exports[`<GridContent /> should render with default withBackground value 1`] = `
       <div
         class="c2"
       >
-        <h1
+        <h2
           class="c3"
         >
           O título do GridContent
-        </h1>
+        </h2>
         <div
           class="c4"
         >
