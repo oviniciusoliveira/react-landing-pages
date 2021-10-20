@@ -1,7 +1,14 @@
-import { Base } from '../Base';
+import { Heading } from '../../components/Heading';
+import * as Styled from './styles';
 
 function Home() {
-  return <Base />;
+  return (
+    <div className="App">
+      <Styled.Wrapper>
+        <Heading>React Landing Pages Title</Heading>
+      </Styled.Wrapper>
+    </div>
+  );
 }
 
 export default Home;
