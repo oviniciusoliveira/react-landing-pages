@@ -22,6 +22,7 @@ export const Grid = styled.div`
 export const GridElement = styled.div`
   ${HeadingContainer} {
     position: relative;
+    width: max-content;
     left: 5rem;
   }
 
@@ -30,7 +31,7 @@ export const GridElement = styled.div`
     content: counter(grid-counter);
     position: absolute;
     font-size: 7rem;
-    top: -3rem;
+    top: -2.5rem;
     left: -5rem;
     transform: rotate(5deg);
   }

@@ -5,6 +5,7 @@ import { Title as LogoTitle } from '../Heading/styles';
 const menuVisible = () => css`
   visibility: visible;
   opacity: 1;
+  height: 100%;
 `;
 
 export const Container = styled.div`
@@ -12,9 +13,7 @@ export const Container = styled.div`
     position: fixed;
     z-index: 5;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
     border-bottom: ${theme.colors.mediumGray};
     background-color: ${theme.colors.lightBackground};
     transition: ${isVisible ? 'all 0.2s ease-in-out' : 'none'};

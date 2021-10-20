@@ -17,9 +17,7 @@ exports[`<Menu /> should match snapshot 1`] = `
   position: fixed;
   z-index: 5;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
   border-bottom: #DDDDDD;
   background-color: #FFFFFF;
   -webkit-transition: none;
@@ -324,9 +322,7 @@ exports[`<Menu /> should not render links 1`] = `
   position: fixed;
   z-index: 5;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
   border-bottom: #DDDDDD;
   background-color: #FFFFFF;
   -webkit-transition: none;

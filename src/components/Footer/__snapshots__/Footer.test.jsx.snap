@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer /> should match snapshot 1`] = `
-.c2 {
+.c3 {
   font-size: 2.4rem;
 }
 
-.c1 {
+.c2 {
   max-width: 120rem;
   margin: 0 auto;
   padding: 3.2rem;
@@ -13,6 +13,7 @@ exports[`<Footer /> should match snapshot 1`] = `
 
 .c0 {
   text-align: center;
+  border-top: 0.1rem solid #DDDDDD;
 }
 
 .c0 a {
@@ -20,21 +21,26 @@ exports[`<Footer /> should match snapshot 1`] = `
   font-size: 1.6rem;
 }
 
+.c0 .c1 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 <div>
   <footer
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 c2"
     >
-      <p
-        class="c2"
+      <div
+        class="c3"
       >
         <h1>
           Footer Text 
         </h1>
         <h1 />
-      </p>
+      </div>
     </div>
   </footer>
 </div>

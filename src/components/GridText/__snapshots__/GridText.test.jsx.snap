@@ -30,6 +30,9 @@ exports[`<GridText /> should render 1`] = `
 
 .c8 .c3 {
   position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   left: 5rem;
 }
 
@@ -38,7 +41,7 @@ exports[`<GridText /> should render 1`] = `
   content: counter(grid-counter);
   position: absolute;
   font-size: 7rem;
-  top: -3rem;
+  top: -2.5rem;
   left: -5rem;
   -webkit-transform: rotate(5deg);
   -ms-transform: rotate(5deg);
