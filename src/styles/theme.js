@@ -32,4 +32,7 @@ export const theme = {
     huge: '5.6rem',
     xhuge: '6.4rem',
   },
+  borderRadius: {
+    small: '0.5rem',
+  },
 };
