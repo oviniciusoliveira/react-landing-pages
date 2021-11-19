@@ -1,39 +1,23 @@
 export const twoSectionColumnsMock = {
   __component: 'section.section-two-columns',
-  _id: '6148d5a6184b55c81816e01e',
   title: 'any_title',
   description: 'any_text',
   metadata: {
     background: true,
-    _id: '6148d5a6184b55c81816e021',
-    name: 'Home',
     section_id: 'any_section_id',
-    __v: 0,
-    id: '6148d5a6184b55c81816e021',
   },
   __v: 1,
   image: {
-    _id: '6148cf3f6ecfadc13894ee44',
-    name: 'landing-page.svg',
-    alternativeText: 'Desenho de pessoas segurando logos do CSS, Javascript e HTML',
-    caption: 'Desenho de pessoas segurando logos do CSS, Javascript e HTML',
-    hash: 'landing_page_59a9f90558',
-    ext: '.svg',
-    mime: 'image/svg+xml',
-    size: 30.31,
     url: 'any_image_src.svg',
-    provider_metadata: {
-      public_id: 'react_landing_pages/landing_page_59a9f90558',
-      resource_type: 'image',
-    },
-    provider: 'cloudinary',
-    width: 1030,
-    height: 730,
-    related: ['6148d5a6184b55c81816e01e', '6148d849184b55c81816e041'],
-    createdAt: '2021-09-20T18:13:19.917Z',
-    updatedAt: '2021-09-20T18:52:02.445Z',
-    __v: 0,
-    id: '6148cf3f6ecfadc13894ee44',
   },
-  id: '6148d5a6184b55c81816e01e',
+};
+
+export const mapSectionContentMock = {
+  __component: 'section.section-content',
+  title: 'any_title',
+  content: '<p>any_content</p>',
+  metadata: {
+    background: true,
+    section_id: 'any_section_id',
+  },
 };

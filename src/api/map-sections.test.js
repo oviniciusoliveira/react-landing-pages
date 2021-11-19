@@ -1,5 +1,5 @@
-import { mapSections, mapSectionTwoColumns } from './map-sections';
-import { twoSectionColumnsMock } from './mock';
+import { mapSectionContent, mapSections, mapSectionTwoColumns } from './map-sections';
+import { twoSectionColumnsMock, mapSectionContentMock } from './mock';
 
 describe('map-sections', () => {
   test('should render default section when no data is sent', () => {
@@ -24,6 +24,24 @@ describe('map-sections', () => {
     expect(data.sectionId).toBe('any_section_id');
     expect(data.imageSrc).toBe('any_image_src.svg');
     expect(data.text).toBe('any_text');
+    expect(data.title).toBe('any_title');
+  });
+
+  test('should map section content with no data', () => {
+    const data = mapSectionContent();
+    expect(data.withBackground).toBe(false);
+    expect(data.component).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.html).toBe('');
+    expect(data.title).toBe('');
+  });
+
+  test('should map section content', () => {
+    const data = mapSectionContent(mapSectionContentMock);
+    expect(data.withBackground).toBe(true);
+    expect(data.component).toBe('section.section-content');
+    expect(data.sectionId).toBe('any_section_id');
+    expect(data.html).toBe('<p>any_content</p>');
     expect(data.title).toBe('any_title');
   });
 });
