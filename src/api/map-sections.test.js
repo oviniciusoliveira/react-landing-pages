@@ -1,10 +1,30 @@
 import { mapSectionContent, mapSections, mapSectionTwoColumns, mapTextGrid, mapImageGrid } from './map-sections';
 import { twoSectionColumnsMock, mapSectionContentMock, mapSectionGridTextMock, mapSectionGridImageMock } from './mock';
+import pagesDataMock from './pages-data-mock.json';
 
 describe('map-sections', () => {
-  test('should render default section when no data is sent', () => {
+  test('should return default section data when no data is sent', () => {
     const data = mapSections();
     expect(data).toEqual([]);
+  });
+
+  test('should return sections with correct data', () => {
+    const data = mapSections(pagesDataMock[0].sections);
+    expect(data[0].component).toBe('section.section-two-columns');
+  });
+
+  test('should handle empty text_grid and empty image_grid', () => {
+    const data = mapSections([
+      {
+        __component: 'section.section-grid',
+      },
+    ]);
+    expect(data).toEqual([{ __component: 'section.section-grid' }]);
+  });
+
+  test('should handle sections with empty or incorrect data', () => {
+    const data = mapSections([{}]);
+    expect(data).toEqual([{}]);
   });
 
   describe('mapSectionTwoColumns', () => {
@@ -50,7 +70,7 @@ describe('map-sections', () => {
   });
 
   describe('mapTextGrid', () => {
-    test('should map secion text grid when section is empty', () => {
+    test('should map section text grid when section is empty', () => {
       const data = mapTextGrid();
       expect(data.component).toBe('section.section-grid-text');
       expect(data.title).toBe('');
@@ -59,7 +79,7 @@ describe('map-sections', () => {
       expect(data.grid).toEqual([]);
     });
 
-    test('should map secion text grid', () => {
+    test('should map section text grid', () => {
       const data = mapTextGrid(mapSectionGridTextMock);
       expect(data.component).toBe('section.section-grid-text');
       expect(data.title).toBe('any_section_title');
@@ -72,7 +92,7 @@ describe('map-sections', () => {
   });
 
   describe('mapImageGrid', () => {
-    test('should map secion image grid when section is empty', () => {
+    test('should map section image grid when section is empty', () => {
       const data = mapImageGrid();
       expect(data.component).toBe('section.section-grid-image');
       expect(data.title).toBe('');
@@ -81,7 +101,7 @@ describe('map-sections', () => {
       expect(data.grid).toEqual([]);
     });
 
-    test('should map secion image grid', () => {
+    test('should map section image grid', () => {
       const data = mapImageGrid(mapSectionGridImageMock);
       expect(data.component).toBe('section.section-grid-image');
       expect(data.title).toBe('any_section_title');
