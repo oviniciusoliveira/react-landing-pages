@@ -1,5 +1,5 @@
-import { mapSectionContent, mapSections, mapSectionTwoColumns, mapTextGrid } from './map-sections';
-import { twoSectionColumnsMock, mapSectionContentMock, mapSectionGridTextMock } from './mock';
+import { mapSectionContent, mapSections, mapSectionTwoColumns, mapTextGrid, mapImageGrid } from './map-sections';
+import { twoSectionColumnsMock, mapSectionContentMock, mapSectionGridTextMock, mapSectionGridImageMock } from './mock';
 
 describe('map-sections', () => {
   test('should render default section when no data is sent', () => {
@@ -68,6 +68,28 @@ describe('map-sections', () => {
       expect(data.grid[0].id).toBe('any_text_grid_id');
       expect(data.grid[0].title).toBe('any_text_grid_title');
       expect(data.grid[0].description).toBe('any_text_grid_description');
+    });
+  });
+
+  describe('mapImageGrid', () => {
+    test('should map secion image grid when section is empty', () => {
+      const data = mapImageGrid();
+      expect(data.component).toBe('section.section-grid-image');
+      expect(data.title).toBe('');
+      expect(data.description).toBe('');
+      expect(data.withBackground).toBe(false);
+      expect(data.grid).toEqual([]);
+    });
+
+    test('should map secion image grid', () => {
+      const data = mapImageGrid(mapSectionGridImageMock);
+      expect(data.component).toBe('section.section-grid-image');
+      expect(data.title).toBe('any_section_title');
+      expect(data.description).toBe('any_section_description');
+      expect(data.withBackground).toBe(true);
+      expect(data.grid[0].id).toBe('any_image_grid_id');
+      expect(data.grid[0].imageSrc).toBe('any_image_url');
+      expect(data.grid[0].alternativeText).toBe('any_image_alternativeText');
     });
   });
 });

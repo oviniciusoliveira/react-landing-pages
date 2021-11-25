@@ -39,3 +39,24 @@ export const mapSectionGridTextMock = {
     section_id: 'any_section_id',
   },
 };
+
+export const mapSectionGridImageMock = {
+  __component: 'section.section-grid',
+  title: 'any_section_title',
+  description: 'any_section_description',
+  text_grid: [],
+  image_grid: [
+    {
+      image: {
+        name: 'any_image_name',
+        alternativeText: 'any_image_alternativeText',
+        url: 'any_image_url',
+      },
+      id: 'any_image_grid_id',
+    },
+  ],
+  metadata: {
+    background: true,
+    section_id: 'any_section_id',
+  },
+};
