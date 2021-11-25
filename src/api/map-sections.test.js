@@ -52,7 +52,7 @@ describe('map-sections', () => {
   describe('mapTextGrid', () => {
     test('should map secion text grid when section is empty', () => {
       const data = mapTextGrid();
-      expect(data.component).toBe('');
+      expect(data.component).toBe('section.section-grid-text');
       expect(data.title).toBe('');
       expect(data.description).toBe('');
       expect(data.withBackground).toBe(false);
@@ -61,7 +61,7 @@ describe('map-sections', () => {
 
     test('should map secion text grid', () => {
       const data = mapTextGrid(mapSectionGridTextMock);
-      expect(data.component).toBe('section.section-grid');
+      expect(data.component).toBe('section.section-grid-text');
       expect(data.title).toBe('any_section_title');
       expect(data.description).toBe('any_section_description');
       expect(data.withBackground).toBe(true);
