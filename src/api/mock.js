@@ -21,3 +21,21 @@ export const mapSectionContentMock = {
     section_id: 'any_section_id',
   },
 };
+
+export const mapSectionGridTextMock = {
+  __component: 'section.section-grid',
+  title: 'any_section_title',
+  description: 'any_section_description',
+  text_grid: [
+    {
+      title: 'any_text_grid_title',
+      description: 'any_text_grid_description',
+      id: 'any_text_grid_id',
+    },
+  ],
+  image_grid: [],
+  metadata: {
+    background: true,
+    section_id: 'any_section_id',
+  },
+};
