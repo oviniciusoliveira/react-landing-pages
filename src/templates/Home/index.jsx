@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
+
 import { mapData } from '../../api/map-data';
 
 import { Base } from '../Base';
@@ -13,11 +15,15 @@ import { GridText } from '../../components/GridText';
 
 function Home() {
   const [pageData, setPageData] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
+    const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
+    const slug = pathName ? pathName : 'landing-page';
+
     const fetchPage = async () => {
       try {
-        const data = await fetch('http://localhost:1337/pages?slug=landing-page');
+        const data = await fetch(`http://localhost:1337/pages?slug=${slug}`);
         const json = await data.json();
         const mappedPageData = mapData(json);
         setPageData(mappedPageData[0]);
@@ -26,7 +32,7 @@ function Home() {
       }
     };
     fetchPage();
-  }, []);
+  }, [location.pathname]);
 
   if (!pageData) {
     return <Page404 />;
