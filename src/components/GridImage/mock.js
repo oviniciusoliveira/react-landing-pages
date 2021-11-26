@@ -1,6 +1,7 @@
 export default {
   withBackground: false,
   title: 'My grid',
+  sectionId: 'grid-image',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada arcu sed dictum malesuada.',
   grid: [

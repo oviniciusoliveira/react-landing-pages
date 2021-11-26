@@ -27,4 +27,5 @@ export default {
   }
   </code></pre>`,
   withBackground: false,
+  sectionId: 'grid-content',
 };
