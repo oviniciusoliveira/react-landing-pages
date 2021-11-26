@@ -34,6 +34,20 @@ function Home() {
     fetchPage();
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (pageData === undefined) {
+      document.title = 'Página não encontrada';
+    }
+
+    if (pageData && !pageData.slug) {
+      document.title = 'Carregando...';
+    }
+
+    if (pageData && pageData.title) {
+      document.title = pageData.title;
+    }
+  }, [pageData]);
+
   if (!pageData) {
     return <Page404 />;
   }
