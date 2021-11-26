@@ -1,36 +1,63 @@
 import { useEffect, useState } from 'react';
+
 import { mapData } from '../../api/map-data';
-import { Heading } from '../../components/Heading';
-import * as Styled from './styles';
+
+import { Base } from '../Base';
+import { Page404 } from '../Page404';
+import { Loading } from '../Loading';
+
+import { GridTwoColumns } from '../../components/GridTwoColumns';
+import { GridContent } from '../../components/GridContent';
+import { GridImage } from '../../components/GridImage';
+import { GridText } from '../../components/GridText';
 
 function Home() {
   const [pageData, setPageData] = useState([]);
 
   useEffect(() => {
     const fetchPage = async () => {
-      const data = await fetch('http://localhost:1337/pages?slug=landing-page');
-      const json = await data.json();
-      const mappedPageData = mapData(json);
-      console.log(mappedPageData);
-      setPageData(mappedPageData[0]);
+      try {
+        const data = await fetch('http://localhost:1337/pages?slug=landing-page');
+        const json = await data.json();
+        const mappedPageData = mapData(json);
+        setPageData(mappedPageData[0]);
+      } catch (error) {
+        setPageData(undefined);
+      }
     };
     fetchPage();
   }, []);
 
   if (!pageData) {
-    return <h1>Page not found</h1>;
+    return <Page404 />;
   }
 
   if (pageData && pageData.length === 0) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   return (
-    <div className="App">
-      <Styled.Wrapper>
-        <Heading>React Landing Pages Title</Heading>
-      </Styled.Wrapper>
-    </div>
+    <Base
+      links={pageData.menu.links}
+      logoData={{ text: pageData.menu.text, imageSrc: pageData.menu.imageSrc, link: pageData.menu.link }}
+      footerHtml={pageData.footerHtml}
+    >
+      {pageData.sections.map((section) => {
+        const { component } = section;
+        if (component === 'section.section-two-columns') {
+          return <GridTwoColumns key={section.sectionId} {...section} />;
+        }
+        if (component === 'section.section-content') {
+          return <GridContent key={section.sectionId} {...section} />;
+        }
+        if (component === 'section.section-grid-text') {
+          return <GridText key={section.sectionId} {...section} />;
+        }
+        if (component === 'section.section-grid-image') {
+          return <GridImage key={section.sectionId} {...section} />;
+        }
+      })}
+    </Base>
   );
 }
 
