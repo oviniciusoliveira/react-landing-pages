@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 import { mapData } from '../../api/map-data';
 
+import config from '../../config';
+
 import { Base } from '../Base';
 import { Page404 } from '../Page404';
 import { Loading } from '../Loading';
@@ -19,11 +21,16 @@ function Home() {
 
   useEffect(() => {
     const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
-    const slug = pathName ? pathName : 'landing-page';
+    const slug = pathName ? pathName : config.defaultSlug;
 
     const fetchPage = async () => {
       try {
-        const data = await fetch(`http://localhost:1337/pages?slug=${slug}`);
+        const data = await fetch(
+          config.url +
+            new URLSearchParams({
+              slug,
+            }),
+        );
         const json = await data.json();
         const mappedPageData = mapData(json);
         setPageData(mappedPageData[0]);
@@ -44,7 +51,7 @@ function Home() {
     }
 
     if (pageData && pageData.title) {
-      document.title = pageData.title;
+      document.title = `${pageData.title} | ${config.siteName}`;
     }
   }, [pageData]);
 
