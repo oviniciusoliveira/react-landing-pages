@@ -36,4 +36,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: ${({ theme }) => theme.spacings.medium} 0;
     padding: ${({ theme }) => theme.spacings.medium} 0;
   }
+
+  .table {
+    width: 100%;
+    overflow-y: auto;
+  }
 `;
