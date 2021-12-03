@@ -1,5 +1,5 @@
 export default {
-  url: 'http://localhost:1337/pages?',
+  url: 'https://landing-pages-with-strapi.herokuapp.com/pages?',
   siteName: 'Vinicius Oliveira',
   defaultSlug: 'landing-page',
 };
